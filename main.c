@@ -11,6 +11,7 @@ int main() {
 	int count = 0;
 
 	while (((c = getc(stdin)) != EOF)) {
+		
 		if (c != ' ' && c!='\n' && c!='.' && c!=',') {
 			count++;
 			if(c<97 || c>122){ // if c is not small letter
@@ -28,6 +29,7 @@ int main() {
 					insert(root, str);
 					 head =freeList(head);
 					free(str);
+					str=NULL;
 					count = 0;
 
 
@@ -44,7 +46,7 @@ int main() {
 	free(str);
 	printTreeLexUp(root);
 	printf("------\n");
-	printTreeLexDown(root);
+	//printTreeLexDown(root);
 	freeTree(root);
 	free(root);
 	root=NULL;

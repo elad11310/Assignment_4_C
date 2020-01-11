@@ -36,7 +36,7 @@ void insert(node* head, char* str)
 }
 void printLexUp(node* head, char s[], int k) {
 	int i = 0;
-	while (i < 26) { // going over the children of the first node
+	while (i < NUM_LETTERS) { // going over the children of the first node
 
 		if (head->children[i] != NULL) { // checking if the neighboor [i] exsits.
 			s[k] = head->children[i]->letter; // takes its value into the arr
@@ -61,7 +61,7 @@ void printLexUp(node* head, char s[], int k) {
 	}
 }
 void printLexDown(node* head, char s[], int k) {
-	int i = 25;
+	int i = NUM_LETTERS-1;
 	while (i >= 0) { // going over the children of the fist node from the last
 
 		if (head->children[i] != NULL) {// checking if the neighboor [i] exsits.
@@ -89,7 +89,9 @@ void printLexDown(node* head, char s[], int k) {
 
 }
 void printTreeLexUp(node* head) {
+
 	if (head != NULL) {
+
 		char* str = (char*)malloc(maxSize+1);
 	
 		if (str != NULL) {
