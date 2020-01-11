@@ -3,9 +3,9 @@ AR=ar
 
 FLAGS= -Wall -g
 
-all:  frequecny	
+all:  frequency	
 
-frequecny: TrieFunc.o main.o
+frequency: TrieFunc.o main.o
 	$(CC)  $(FLAGS) -o frequecny main.o TrieFunc.o
 
 main.o: main.c Trie.h  
