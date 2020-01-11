@@ -6,7 +6,7 @@ FLAGS= -Wall -g
 all:  frequency	
 
 frequency: TrieFunc.o main.o
-	$(CC)  $(FLAGS) -o frequecny main.o TrieFunc.o
+	$(CC)  $(FLAGS) -o frequency main.o TrieFunc.o
 
 main.o: main.c Trie.h  
 	$(CC) $(FLAGS) -c main.c 
@@ -17,7 +17,7 @@ TrieFunc.o: TrieFunc.c Trie.h
 
 
 
-.PHONY: frequecny clean all 
+.PHONY: frequency clean all 
 
 clean:
-	rm -f *.o *.a *.so  frequecny 
+	rm -f *.o *.a *.so  frequency 
