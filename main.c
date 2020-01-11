@@ -1,6 +1,12 @@
 #include "Trie.h"
+#include <string.h>
 int maxSize=0;
-int main() {
+int main(int argc,char** args) {
+
+	int isReverse=0;
+	if(argc==2 && strcmp(args[1],"r")==0){ // check if there is an input from user
+		isReverse=1;
+	}	
 
 
 
@@ -27,7 +33,7 @@ int main() {
 			str = fromListToStr(head,str,count);
 					
 					insert(root, str);
-					 head =freeList(head);
+					 head = freeList(head);
 					free(str);
 					str=NULL;
 					count = 0;
@@ -44,9 +50,10 @@ int main() {
 	
 					
 	free(str);
-	printTreeLexUp(root);
-	printf("------\n");
-	//printTreeLexDown(root);
+	if(isReverse)
+		printTreeLexDown(root);
+	else
+		printTreeLexUp(root);
 	freeTree(root);
 	free(root);
 	root=NULL;
