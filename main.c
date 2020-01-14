@@ -26,7 +26,7 @@ int main(int argc,char** args) {
 			head = add(head, c);
 		}
 		
-		if (c == ' ' || c=='\n') {
+		if (c == ' ' || c=='\n' || c=='.' || c==',') {
 			if(maxSize<count){
 			maxSize=count; // saving the maximum length of word 						//that we get
 			}
