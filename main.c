@@ -18,7 +18,8 @@ int main(int argc,char** args) {
 
 	while (((c = getc(stdin)) != EOF)) {
 		
-		if (c != ' ' && c!='\n' && c!='.' && c!=',') {
+		//if (c != ' ' && c!='\n' && c!='.' && c!=',') {
+			if((c>=65 && c<=90) || (c>=97 && c<=122)){
 			count++;
 			if(c<97 || c>122){ // if c is not small letter
 				c=c+'a'-'A';
